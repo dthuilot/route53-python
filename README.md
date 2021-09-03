@@ -53,7 +53,7 @@ It's used to update the CNAME when we refresh the documentDB databases in the Th
     Path to the source file of the format [{"service_name":"a","host":"b"}]
 * `batchFile`
 
-    Path to the batch file generated for the actions on the Route53 records (the file itself is not used actyally but should be backuped with a timestamp to keep the history of the changes)
+    Path to the batch file generated for the actions on the Route53 records (the file itself is not used but should be backuped with a timestamp to keep the history of the changes)
 
 * `dnsZoneID`
 
