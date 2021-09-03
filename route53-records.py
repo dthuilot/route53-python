@@ -1,6 +1,6 @@
 from json import dump
 import json
-# import boto3
+import boto3
 
 ## Read input data service name and host url by service
 def services_list():
@@ -27,18 +27,29 @@ def generate_json(servicesList):
     with open('outputs/route53-batch.json', 'w') as f:
         dump(d, f)
 
+    # print changes
+    print(d)
+
+    return d
 
 ## Apply upsert on route53
-def route53_upsert():
+def route53_upsert(batch):
     print("Route53 upserts\n")
-    # client = boto3.client('route53')
+    client = boto3.client('route53')
+
+    response = client.change_resource_record_sets(
+        # DNS host ID for thorhudl.com
+        HostedZoneId='ZHOXMPZMS6ELK',
+        ChangeBatch= batch
+    )
+
+    print(response)
+
 
 ## Main function
 def main():
     print("Welcome to main\n")
-    input = services_list()
-    generate_json(input)
-    route53_upsert()
+    route53_upsert(generate_json(services_list()))
 
 if __name__ == "__main__":
     main()
