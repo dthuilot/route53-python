@@ -25,7 +25,8 @@ def generate_json(servicesList):
     print(changes)
     
     
-    d = {"Comment": "UPSERT","Changes": [changes]}
+    #d = {"Comment": "UPSERT","Changes": [changes]}
+    d = {"Comment": "UPSERT","Changes": changes}
     
     with open('outputs/route53-batch.json', 'w') as f:
         dump(d, f)

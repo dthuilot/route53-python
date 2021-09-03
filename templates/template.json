@@ -2,22 +2,30 @@
     "Comment": "UPSERT",
     "Changes": [
         {
-        "Action": "UPSERT",
-        "ResourceRecordSet": {
-            "Name": "t-SERVICE_NAME_VALUE-docdb.app.thorhudl.com",
-            "Type": "CNAME",
-            "TTL": 300,
-            "ResourceRecords": [{"Value": "HOST_VALUE"}]
-        }
-    },
+            "Action": "UPSERT",
+            "ResourceRecordSet": {
+                "Name": "t-SERVICE_NAME_VALUE-docdb.app.thorhudl.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [
+                    {
+                        "Value": "HOST_VALUE"
+                    }
+                ]
+            }
+        },
         {
-        "Action": "UPSERT",
-        "ResourceRecordSet": {
-            "Name": "t-SERVICE_NAME_VALUE-docdb.app.thorhudl.com",
-            "Type": "CNAME",
-            "TTL": 300,
-            "ResourceRecords": [{"Value": "HOST_VALUE"}]
+            "Action": "UPSERT",
+            "ResourceRecordSet": {
+                "Name": "t-SERVICE_NAME_VALUE-docdb.app.thorhudl.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [
+                    {
+                        "Value": "HOST_VALUE"
+                    }
+                ]
+            }
         }
-    }
     ]
 }

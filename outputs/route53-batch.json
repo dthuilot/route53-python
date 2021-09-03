@@ -1,33 +1,31 @@
 {
     "Comment": "UPSERT",
     "Changes": [
-        [
-            {
-                "Action": "UPSERT",
-                "ResourceRecordSet": {
-                    "Name": "t-speedtest-docdb.app.thorhudl.com",
-                    "Type": "CNAME",
-                    "TTL": 300,
-                    "ResourceRecords": [
-                        {
-                            "Value": "speedtest.foo.com"
-                        }
-                    ]
-                }
-            },
-            {
-                "Action": "UPSERT",
-                "ResourceRecordSet": {
-                    "Name": "t-sportradar-docdb.app.thorhudl.com",
-                    "Type": "CNAME",
-                    "TTL": 300,
-                    "ResourceRecords": [
-                        {
-                            "Value": "sportradar.foo.com"
-                        }
-                    ]
-                }
+        {
+            "Action": "UPSERT",
+            "ResourceRecordSet": {
+                "Name": "t-speedtest-docdb.app.thorhudl.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [
+                    {
+                        "Value": "speedtest.foo.com"
+                    }
+                ]
             }
-        ]
+        },
+        {
+            "Action": "UPSERT",
+            "ResourceRecordSet": {
+                "Name": "t-sportradar-docdb.app.thorhudl.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [
+                    {
+                        "Value": "sportradar.foo.com"
+                    }
+                ]
+            }
+        }
     ]
 }
