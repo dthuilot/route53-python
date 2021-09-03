@@ -1,0 +1,4 @@
+[
+    {"service_name":"speedtest","host":"speedtest.foo.com"},
+    {"service_name":"sportradar","host":"sportradar.foo.com"}
+]
