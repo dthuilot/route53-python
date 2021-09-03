@@ -22,10 +22,6 @@ def generate_json(servicesList):
     for i in servicesList:
         changes.append({"Action": "UPSERT", "ResourceRecordSet": { "Name": "t-"+i['service_name']+"-docdb.app.thorhudl.com", "Type": "CNAME", "TTL": 300, "ResourceRecords": [{"Value": i['host']}]}})
     
-    print(changes)
-    
-    
-    #d = {"Comment": "UPSERT","Changes": [changes]}
     d = {"Comment": "UPSERT","Changes": changes}
     
     with open('outputs/route53-batch.json', 'w') as f:
