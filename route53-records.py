@@ -2,11 +2,17 @@ from json import dump
 import json
 import boto3
 
+## Variables
+sourceFile = "values.json"                  # Source file of the format [{"service_name":"a","host":"b"}]
+batchFile = "outputs/route53-batch.json"    # Path to the batch file used for the actions on the Route53 records
+dnsZoneID = 'ZHOXMPZMS6ELK'                 # DNS Zone ID
+
+
 ## Read input data service name and host url by service
 def services_list():
     print("Read JSON values\n")
     # Opening JSON file
-    with open('values.json') as json_file:
+    with open(sourceFile) as json_file:
         data = json.load(json_file)
   
     # Count the number of service to update
@@ -24,11 +30,14 @@ def generate_json(servicesList):
     
     d = {"Comment": "UPSERT","Changes": changes}
     
-    with open('outputs/route53-batch.json', 'w') as f:
+    with open(batchFile, 'w') as f:
         dump(d, f)
 
+    # Pretty Print JSON
+    json_formatted_str = json.dumps(d, indent=4)
+
     # print changes
-    print(d)
+    print(json_formatted_str)
 
     return d
 
@@ -39,7 +48,7 @@ def route53_upsert(batch):
 
     response = client.change_resource_record_sets(
         # DNS host ID for thorhudl.com
-        HostedZoneId='ZHOXMPZMS6ELK',
+        HostedZoneId= dnsZoneID,
         ChangeBatch= batch
     )
 
