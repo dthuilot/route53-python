@@ -1,4 +1,4 @@
-# Hudl DocumentDB route53 upserts
+# DocumentDB route53 upserts
 
 ## What does this code
 
@@ -10,7 +10,7 @@ This code generate a batch file of type :
         {
             "Action": "UPSERT",
             "ResourceRecordSet": {
-                "Name": "t-speedtest-docdb.app.thorhudl.com",
+                "Name": "t-speedtest-docdb.app.xxx.com",
                 "Type": "CNAME",
                 "TTL": 300,
                 "ResourceRecords": [
@@ -23,7 +23,7 @@ This code generate a batch file of type :
         {
             "Action": "UPSERT",
             "ResourceRecordSet": {
-                "Name": "t-sportradar-docdb.app.thorhudl.com",
+                "Name": "t-sportradar-docdb.app.xxx.com",
                 "Type": "CNAME",
                 "TTL": 300,
                 "ResourceRecords": [
@@ -44,7 +44,7 @@ from a source file of type :
 
 and apply the batch file on the DNS Zone specified by the dnsZoneID.
 
-It's used to update the CNAME when we refresh the documentDB databases in the Thor environment.
+It's used to update the CNAME when we refresh the documentDB databases in the dev environment.
 
 ## Variables
 
